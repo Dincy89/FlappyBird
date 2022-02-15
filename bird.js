@@ -6,9 +6,7 @@ let timeSinceLastJump = Number.POSITIVE_INFINITY
 export function setupBird() {
   setTop(window.innerHeight / 2)
   document.removeEventListener("keydown", handleJump)
-  document.removeEventListener("touchstart", handleJump)
   document.addEventListener("keydown", handleJump)
-  document.addEventListener("touchstart", handleJump)
 }
 
 export function updateBird(delta) {
@@ -35,6 +33,6 @@ function getTop() {
 
 function handleJump(e) {
   if (e.code !== "Space") return
-  closePopupOnClick(e, popup);
+
   timeSinceLastJump = 0
 }
